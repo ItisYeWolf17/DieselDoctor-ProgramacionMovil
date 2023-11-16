@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -222,7 +223,18 @@ class _LoginWidgetState extends State<LoginWidget> {
                         alignment: AlignmentDirectional(0.00, 0.00),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('Home');
+                            GoRouter.of(context).prepareAuthEvent();
+
+                            final user = await authManager.signInWithEmail(
+                              context,
+                              _model.emailFieldController.text,
+                              _model.passwordFieldController.text,
+                            );
+                            if (user == null) {
+                              return;
+                            }
+
+                            context.goNamedAuth('Home', context.mounted);
                           },
                           text: FFLocalizations.of(context).getText(
                             'jc3h8uk6' /* Iniciar Sesión */,
@@ -261,17 +273,39 @@ class _LoginWidgetState extends State<LoginWidget> {
                     Expanded(
                       child: Align(
                         alignment: AlignmentDirectional(0.00, -1.00),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'wxur3m2y' /* ¿No recuerda su contraseña? */,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            if (_model.emailFieldController.text.isEmpty) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'Email required!',
+                                  ),
+                                ),
+                              );
+                              return;
+                            }
+                            await authManager.resetPassword(
+                              email: _model.emailFieldController.text,
+                              context: context,
+                            );
+                          },
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'wxur3m2y' /* ¿No recuerda su contraseña? */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: 'Readex Pro',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                              ),
                         ),
                       ),
                     ),

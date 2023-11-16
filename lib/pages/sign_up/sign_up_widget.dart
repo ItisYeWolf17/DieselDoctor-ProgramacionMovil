@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -285,7 +287,38 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         alignment: AlignmentDirectional(0.00, 0.00),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('Login');
+                            GoRouter.of(context).prepareAuthEvent();
+                            if (_model.passwordFIeldController.text !=
+                                _model.passwordFIeldController.text) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'Passwords don\'t match!',
+                                  ),
+                                ),
+                              );
+                              return;
+                            }
+
+                            final user =
+                                await authManager.createAccountWithEmail(
+                              context,
+                              _model.emailFieldController.text,
+                              _model.passwordFIeldController.text,
+                            );
+                            if (user == null) {
+                              return;
+                            }
+
+                            await UsersRecord.collection
+                                .doc(user.uid)
+                                .update(createUsersRecordData(
+                                  email: _model.emailFieldController.text,
+                                  displayName:
+                                      _model.fullnameFieldController.text,
+                                ));
+
+                            context.goNamedAuth('Home', context.mounted);
                           },
                           text: FFLocalizations.of(context).getText(
                             'n0psskue' /* Crear Cuenta */,
