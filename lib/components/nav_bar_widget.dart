@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'nav_bar_model.dart';
 export 'nav_bar_model.dart';
 
@@ -103,15 +102,37 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                           ),
                         ),
                       ),
-                      Icon(
-                        Icons.calendar_month,
-                        color: FlutterFlowTheme.of(context).sinopia,
-                        size: 35.0,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('AddAppoiment');
+                        },
+                        child: Icon(
+                          Icons.calendar_month,
+                          color: FlutterFlowTheme.of(context).sinopia,
+                          size: 35.0,
+                        ),
                       ),
-                      FaIcon(
-                        FontAwesomeIcons.moneyBill,
-                        color: FlutterFlowTheme.of(context).sinopia,
-                        size: 35.0,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          GoRouter.of(context).prepareAuthEvent();
+                          await authManager.signOut();
+                          GoRouter.of(context).clearRedirectLocation();
+
+                          context.goNamedAuth('Login', context.mounted);
+                        },
+                        child: Icon(
+                          Icons.logout,
+                          color: FlutterFlowTheme.of(context).sinopia,
+                          size: 35.0,
+                        ),
                       ),
                     ],
                   ),
@@ -142,12 +163,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       color: FlutterFlowTheme.of(context).primaryText,
                       size: 24.0,
                     ),
-                    onPressed: () async {
-                      GoRouter.of(context).prepareAuthEvent();
-                      await authManager.signOut();
-                      GoRouter.of(context).clearRedirectLocation();
-
-                      context.goNamedAuth('Login', context.mounted);
+                    onPressed: () {
+                      print('IconButton pressed ...');
                     },
                   ),
                 ),

@@ -8,3 +8,6 @@ export '/pages/add_customer/add_customer_widget.dart' show AddCustomerWidget;
 export '/pages/update_customer/update_customer_widget.dart'
     show UpdateCustomerWidget;
 export '/pages/add_vehicle/add_vehicle_widget.dart' show AddVehicleWidget;
+export '/pages/add_appoiment/add_appoiment_widget.dart' show AddAppoimentWidget;
+export '/pages/add_maintenance/add_maintenance_widget.dart'
+    show AddMaintenanceWidget;

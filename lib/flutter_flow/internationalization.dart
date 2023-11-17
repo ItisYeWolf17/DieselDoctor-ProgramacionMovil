@@ -220,7 +220,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // Vehicles
   {
     'pzykhk7g': {
-      'es': 'Datos de los carros ',
+      'es': 'Vehiculos',
       'en': '',
     },
     '7b8tnz4f': {
@@ -341,6 +341,68 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'z5uifcmq': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // AddAppoiment
+  {
+    's86dycsn': {
+      'es': 'Agregar Cita',
+      'en': '',
+    },
+    'wgwa1rgs': {
+      'es': 'Seleccionar Fecha',
+      'en': '',
+    },
+    'ke3a9osl': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'tkqv9z6t': {
+      'es': 'Please select...',
+      'en': '',
+    },
+    'gvnfs19j': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'domo268e': {
+      'es': 'Ingrese decripcion',
+      'en': '',
+    },
+    'fiffciz6': {
+      'es': 'Agendar Cita',
+      'en': '',
+    },
+    'h0g3r65z': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // AddMaintenance
+  {
+    'dpr6g8f3': {
+      'es': 'Agregar Mantenimiento',
+      'en': '',
+    },
+    'erfm3kwo': {
+      'es': 'Ingrese el detalle',
+      'en': '',
+    },
+    '3cmtyhg5': {
+      'es': 'Ingrese la descripcion',
+      'en': '',
+    },
+    'jw7yik4z': {
+      'es': 'Ingrese el costo',
+      'en': '',
+    },
+    'yxv2ic6w': {
+      'es': 'Agregar Mantenimiento',
+      'en': '',
+    },
+    'ce5c0za6': {
       'es': 'Home',
       'en': '',
     },

@@ -128,6 +128,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AddVehicle',
           path: '/addVehicle',
           builder: (context, params) => const AddVehicleWidget(),
+        ),
+        FFRoute(
+          name: 'AddAppoiment',
+          path: '/AddAppoiment',
+          builder: (context, params) => const AddAppoimentWidget(),
+        ),
+        FFRoute(
+          name: 'AddMaintenance',
+          path: '/addMaintenance',
+          builder: (context, params) => const AddMaintenanceWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
