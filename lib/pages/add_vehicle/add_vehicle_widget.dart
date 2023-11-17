@@ -513,7 +513,7 @@ class _AddVehicleWidgetState extends State<AddVehicleWidget> {
                                   imagen: _model.txturlimagenController.text,
                                 ));
 
-                            context.pushNamed('Datoscarros');
+                            context.pushNamed('Vehicles');
 
                             await showDialog(
                               context: context,

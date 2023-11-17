@@ -217,7 +217,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // Datoscarros
+  // Vehicles
   {
     'pzykhk7g': {
       'es': 'Datos de los carros ',
@@ -227,16 +227,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Añadir Vehiculo',
       'en': '',
     },
-    '4f62ooll': {
-      'es': 'Abs Blaster',
-      'en': '',
-    },
-    'az3jlp9k': {
-      'es': 'Total Workouts: ',
-      'en': '',
-    },
     '0bb8lh3y': {
-      'es': '12',
+      'es': ' - ',
       'en': '',
     },
     '4d9uxvnn': {

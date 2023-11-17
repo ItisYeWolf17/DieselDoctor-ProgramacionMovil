@@ -605,8 +605,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                                 highlightColor:
                                                     Colors.transparent,
                                                 onTap: () async {
-                                                  context
-                                                      .pushNamed('Datoscarros');
+                                                  context.pushNamed('Vehicles');
                                                 },
                                                 child: ClipRRect(
                                                   borderRadius:

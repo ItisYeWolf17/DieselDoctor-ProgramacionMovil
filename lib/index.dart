@@ -3,7 +3,7 @@ export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;
 export '/pages/home/home_widget.dart' show HomeWidget;
 export '/pages/customers/customers_widget.dart' show CustomersWidget;
-export '/pages/datoscarros/datoscarros_widget.dart' show DatoscarrosWidget;
+export '/pages/vehicles/vehicles_widget.dart' show VehiclesWidget;
 export '/pages/add_customer/add_customer_widget.dart' show AddCustomerWidget;
 export '/pages/update_customer/update_customer_widget.dart'
     show UpdateCustomerWidget;

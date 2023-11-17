@@ -102,9 +102,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CustomersWidget(),
         ),
         FFRoute(
-          name: 'Datoscarros',
-          path: '/datoscarros',
-          builder: (context, params) => const DatoscarrosWidget(),
+          name: 'Vehicles',
+          path: '/vehicles',
+          builder: (context, params) => VehiclesWidget(
+            cliente: params.getParam(
+                'cliente', ParamType.DocumentReference, false, ['clientes']),
+          ),
         ),
         FFRoute(
           name: 'AddCustomer',

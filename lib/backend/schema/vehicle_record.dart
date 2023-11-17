@@ -45,6 +45,11 @@ class VehicleRecord extends FirestoreRecord {
   String get imagen => _imagen ?? '';
   bool hasImagen() => _imagen != null;
 
+  // "cliente" field.
+  DocumentReference? _cliente;
+  DocumentReference? get cliente => _cliente;
+  bool hasCliente() => _cliente != null;
+
   void _initializeFields() {
     _marca = snapshotData['marca'] as String?;
     _modelo = snapshotData['modelo'] as String?;
@@ -52,6 +57,7 @@ class VehicleRecord extends FirestoreRecord {
     _placa = snapshotData['placa'] as String?;
     _color = snapshotData['color'] as String?;
     _imagen = snapshotData['imagen'] as String?;
+    _cliente = snapshotData['cliente'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -95,6 +101,7 @@ Map<String, dynamic> createVehicleRecordData({
   String? placa,
   String? color,
   String? imagen,
+  DocumentReference? cliente,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -104,6 +111,7 @@ Map<String, dynamic> createVehicleRecordData({
       'placa': placa,
       'color': color,
       'imagen': imagen,
+      'cliente': cliente,
     }.withoutNulls,
   );
 
@@ -120,12 +128,20 @@ class VehicleRecordDocumentEquality implements Equality<VehicleRecord> {
         e1?.year == e2?.year &&
         e1?.placa == e2?.placa &&
         e1?.color == e2?.color &&
-        e1?.imagen == e2?.imagen;
+        e1?.imagen == e2?.imagen &&
+        e1?.cliente == e2?.cliente;
   }
 
   @override
-  int hash(VehicleRecord? e) => const ListEquality()
-      .hash([e?.marca, e?.modelo, e?.year, e?.placa, e?.color, e?.imagen]);
+  int hash(VehicleRecord? e) => const ListEquality().hash([
+        e?.marca,
+        e?.modelo,
+        e?.year,
+        e?.placa,
+        e?.color,
+        e?.imagen,
+        e?.cliente
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is VehicleRecord;
