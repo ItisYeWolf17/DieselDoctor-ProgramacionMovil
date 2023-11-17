@@ -4,7 +4,7 @@ export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;
 export '/pages/home/home_widget.dart' show HomeWidget;
 export '/pages/customers/customers_widget.dart' show CustomersWidget;
 export '/pages/datoscarros/datoscarros_widget.dart' show DatoscarrosWidget;
-export '/pages/add_vehicle/add_vehicle_widget.dart' show AddVehicleWidget;
 export '/pages/add_customer/add_customer_widget.dart' show AddCustomerWidget;
 export '/pages/update_customer/update_customer_widget.dart'
     show UpdateCustomerWidget;
+export '/pages/add_vehicle/add_vehicle_widget.dart' show AddVehicleWidget;

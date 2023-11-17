@@ -130,7 +130,7 @@ class _UpdateCustomerWidgetState extends State<UpdateCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  'yhse56k9' /* Ingrese el nombre del cliente */,
+                                  'yx89rtjc' /* Ingrese el nombre del cliente */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -195,7 +195,7 @@ class _UpdateCustomerWidgetState extends State<UpdateCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  '96wwrj7n' /* Ingrese los apellidos del clie... */,
+                                  'hnzdulzm' /* Ingrese los apellidos del clie... */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -260,7 +260,7 @@ class _UpdateCustomerWidgetState extends State<UpdateCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  '4yvs5d2t' /* Ingrese el numero de cedula de... */,
+                                  'ndlsm9t1' /* Ingrese el numero de cedula de... */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -325,7 +325,7 @@ class _UpdateCustomerWidgetState extends State<UpdateCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  '0wu8zapw' /* Ingrese el telefono del client... */,
+                                  '3cytz6e9' /* Ingrese el telefono del client... */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -390,7 +390,7 @@ class _UpdateCustomerWidgetState extends State<UpdateCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  'hvb4yil3' /* Ingrese el correo del cliente */,
+                                  '3vxxjenr' /* Ingrese el correo del cliente */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -481,7 +481,7 @@ class _UpdateCustomerWidgetState extends State<UpdateCustomerWidget> {
                                   );
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'yxqn94ur' /* Actualizar Cliente */,
+                                  '2s94ezfp' /* Actualizar Cliente */,
                                 ),
                                 options: FFButtonOptions(
                                   width: 300.0,

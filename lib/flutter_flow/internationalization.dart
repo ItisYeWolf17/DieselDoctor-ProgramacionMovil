@@ -244,48 +244,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // AddVehicle
-  {
-    'cs85h05l': {
-      'es': 'Vehiculo Nuevo',
-      'en': '',
-    },
-    'nt0jk852': {
-      'es': 'Page Title',
-      'en': '',
-    },
-    'bavxn6p4': {
-      'es': 'Home',
-      'en': '',
-    },
-  },
   // AddCustomer
   {
     'c553wk15': {
       'es': 'Agregar Cliente     ',
       'en': '',
     },
-    '51jvabjh': {
+    'c93dtzuu': {
       'es': 'Ingrese el nombre del cliente',
       'en': '',
     },
-    '0armx4c0': {
+    'lvwg4qum': {
       'es': 'Ingrese los apellidos del cliente',
       'en': '',
     },
-    'ayepxr7t': {
+    'zu24la0b': {
       'es': 'Ingrese el numero de cedula del cliente',
       'en': '',
     },
-    'kskaurel': {
+    'zh17pu6o': {
       'es': 'Ingrese el telefono del cliente',
       'en': '',
     },
-    'yevh852a': {
+    'v1xm1l62': {
       'es': 'Ingrese el correo del cliente',
       'en': '',
     },
-    'ssq6ziky': {
+    '7reyi9jg': {
       'es': 'Agregar Cliente',
       'en': '',
     },
@@ -300,31 +285,70 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Actualizar Cliente     ',
       'en': '',
     },
-    'yhse56k9': {
+    'yx89rtjc': {
       'es': 'Ingrese el nombre del cliente',
       'en': '',
     },
-    '96wwrj7n': {
+    'hnzdulzm': {
       'es': 'Ingrese los apellidos del cliente',
       'en': '',
     },
-    '4yvs5d2t': {
+    'ndlsm9t1': {
       'es': 'Ingrese el numero de cedula del cliente',
       'en': '',
     },
-    '0wu8zapw': {
+    '3cytz6e9': {
       'es': 'Ingrese el telefono del cliente',
       'en': '',
     },
-    'hvb4yil3': {
+    '3vxxjenr': {
       'es': 'Ingrese el correo del cliente',
       'en': '',
     },
-    'yxqn94ur': {
+    '2s94ezfp': {
       'es': 'Actualizar Cliente',
       'en': '',
     },
     'lk7xf8vr': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // AddVehicle
+  {
+    '08x3bnjr': {
+      'es': 'Agregar Vehiculo',
+      'en': '',
+    },
+    'q9mknz9n': {
+      'es': 'Ingrese la marca',
+      'en': '',
+    },
+    'o0j64sc4': {
+      'es': 'Ingrese el modelo',
+      'en': '',
+    },
+    'pfr9adhb': {
+      'es': 'Ingrese el año ',
+      'en': '',
+    },
+    'lnq14rmr': {
+      'es': 'Ingrese la placa',
+      'en': '',
+    },
+    'uengq7mj': {
+      'es': 'Ingrese el color',
+      'en': '',
+    },
+    'ge48fvmp': {
+      'es': 'Ingrese url de la imagen',
+      'en': '',
+    },
+    'ymc6zj18': {
+      'es': 'Agregar  Vehiculo',
+      'en': '',
+    },
+    'z5uifcmq': {
       'es': 'Home',
       'en': '',
     },

@@ -121,7 +121,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  '51jvabjh' /* Ingrese el nombre del cliente */,
+                                  'c93dtzuu' /* Ingrese el nombre del cliente */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -186,7 +186,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  '0armx4c0' /* Ingrese los apellidos del clie... */,
+                                  'lvwg4qum' /* Ingrese los apellidos del clie... */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -251,7 +251,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  'ayepxr7t' /* Ingrese el numero de cedula de... */,
+                                  'zu24la0b' /* Ingrese el numero de cedula de... */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -316,7 +316,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  'kskaurel' /* Ingrese el telefono del client... */,
+                                  'zh17pu6o' /* Ingrese el telefono del client... */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -381,7 +381,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  'yevh852a' /* Ingrese el correo del cliente */,
+                                  'v1xm1l62' /* Ingrese el correo del cliente */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -476,7 +476,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                   );
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'ssq6ziky' /* Agregar Cliente */,
+                                  '7reyi9jg' /* Agregar Cliente */,
                                 ),
                                 options: FFButtonOptions(
                                   width: 300.0,

@@ -107,11 +107,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const DatoscarrosWidget(),
         ),
         FFRoute(
-          name: 'AddVehicle',
-          path: '/addVehicle',
-          builder: (context, params) => const AddVehicleWidget(),
-        ),
-        FFRoute(
           name: 'AddCustomer',
           path: '/addCustomer',
           builder: (context, params) => const AddCustomerWidget(),
@@ -125,6 +120,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => UpdateCustomerWidget(
             cliente: params.getParam('cliente', ParamType.Document),
           ),
+        ),
+        FFRoute(
+          name: 'AddVehicle',
+          path: '/addVehicle',
+          builder: (context, params) => const AddVehicleWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
