@@ -208,28 +208,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Ingrese el nombre del cliente a buscar',
       'en': '',
     },
-    '1kdbbjbd': {
-      'es': 'Nombre de Cliente',
-      'en': '',
-    },
     '7ns9585y': {
-      'es': '15',
-      'en': '',
-    },
-    'n3nh9kk2': {
-      'es': 'Nombre de Cliente',
-      'en': '',
-    },
-    'whu9sgv2': {
-      'es': '15',
-      'en': '',
-    },
-    'fv9qjc29': {
-      'es': 'Nombre de Cliente',
-      'en': '',
-    },
-    'pvaa3kb8': {
-      'es': '15',
+      'es': '0',
       'en': '',
     },
     'o21dhs50': {
@@ -275,6 +255,76 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'bavxn6p4': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // AddCustomer
+  {
+    'c553wk15': {
+      'es': 'Agregar Cliente     ',
+      'en': '',
+    },
+    '51jvabjh': {
+      'es': 'Ingrese el nombre del cliente',
+      'en': '',
+    },
+    '0armx4c0': {
+      'es': 'Ingrese los apellidos del cliente',
+      'en': '',
+    },
+    'ayepxr7t': {
+      'es': 'Ingrese el numero de cedula del cliente',
+      'en': '',
+    },
+    'kskaurel': {
+      'es': 'Ingrese el telefono del cliente',
+      'en': '',
+    },
+    'yevh852a': {
+      'es': 'Ingrese el correo del cliente',
+      'en': '',
+    },
+    'ssq6ziky': {
+      'es': 'Agregar Cliente',
+      'en': '',
+    },
+    'm1i7a2r5': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // UpdateCustomer
+  {
+    'nfljc95p': {
+      'es': 'Actualizar Cliente     ',
+      'en': '',
+    },
+    'yhse56k9': {
+      'es': 'Ingrese el nombre del cliente',
+      'en': '',
+    },
+    '96wwrj7n': {
+      'es': 'Ingrese los apellidos del cliente',
+      'en': '',
+    },
+    '4yvs5d2t': {
+      'es': 'Ingrese el numero de cedula del cliente',
+      'en': '',
+    },
+    '0wu8zapw': {
+      'es': 'Ingrese el telefono del cliente',
+      'en': '',
+    },
+    'hvb4yil3': {
+      'es': 'Ingrese el correo del cliente',
+      'en': '',
+    },
+    'yxqn94ur': {
+      'es': 'Actualizar Cliente',
+      'en': '',
+    },
+    'lk7xf8vr': {
       'es': 'Home',
       'en': '',
     },

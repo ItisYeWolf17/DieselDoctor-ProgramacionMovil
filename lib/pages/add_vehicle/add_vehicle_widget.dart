@@ -1,15 +1,12 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'add_vehicle_model.dart';
 export 'add_vehicle_model.dart';
 
 class AddVehicleWidget extends StatefulWidget {
-  const AddVehicleWidget({Key? key}) : super(key: key);
+  const AddVehicleWidget({super.key});
 
   @override
   _AddVehicleWidgetState createState() => _AddVehicleWidgetState();
@@ -66,7 +63,7 @@ class _AddVehicleWidgetState extends State<AddVehicleWidget> {
                   fontSize: 22.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -75,7 +72,7 @@ class _AddVehicleWidgetState extends State<AddVehicleWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Row(
+              const Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Row(

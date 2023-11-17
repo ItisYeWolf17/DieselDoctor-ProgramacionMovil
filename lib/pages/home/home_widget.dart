@@ -2,16 +2,13 @@ import '/components/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
 class HomeWidget extends StatefulWidget {
-  const HomeWidget({Key? key}) : super(key: key);
+  const HomeWidget({super.key});
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -70,7 +67,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           10.0, 50.0, 10.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -92,7 +89,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -166,7 +163,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           10.0, 15.0, 10.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -274,7 +271,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           10.0, 20.0, 10.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -330,7 +327,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             wrapWithModel(
               model: _model.navBarModel,
               updateCallback: () => setState(() {}),
-              child: NavBarWidget(),
+              child: const NavBarWidget(),
             ),
           ],
         ),

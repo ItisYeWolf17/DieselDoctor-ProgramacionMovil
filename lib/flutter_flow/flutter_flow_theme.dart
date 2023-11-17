@@ -131,16 +131,16 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF0000);
   late Color info = const Color(0xFF2196F3);
 
-  late Color raisinBlack = Color(0xFF272525);
-  late Color eerieBlack = Color(0xFF262626);
-  late Color cinnabar = Color(0xFFE04422);
-  late Color eerieBlack2 = Color(0xFF262626);
-  late Color sinopia = Color(0xFFC94122);
-  late Color eerieBlack3 = Color(0xFF1D1D1D);
-  late Color engineeringOrange = Color(0xFFBF0000);
-  late Color black = Color(0xFF000000);
-  late Color white = Color(0xFFFEFEFD);
-  late Color black2 = Color(0xFF000000);
+  late Color raisinBlack = const Color(0xFF272525);
+  late Color eerieBlack = const Color(0xFF262626);
+  late Color cinnabar = const Color(0xFFE04422);
+  late Color eerieBlack2 = const Color(0xFF262626);
+  late Color sinopia = const Color(0xFFC94122);
+  late Color eerieBlack3 = const Color(0xFF1D1D1D);
+  late Color engineeringOrange = const Color(0xFFBF0000);
+  late Color black = const Color(0xFF000000);
+  late Color white = const Color(0xFFFEFEFD);
+  late Color black2 = const Color(0xFF000000);
 }
 
 abstract class Typography {

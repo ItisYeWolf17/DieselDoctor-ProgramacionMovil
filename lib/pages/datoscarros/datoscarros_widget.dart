@@ -2,16 +2,13 @@ import '/components/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'datoscarros_model.dart';
 export 'datoscarros_model.dart';
 
 class DatoscarrosWidget extends StatefulWidget {
-  const DatoscarrosWidget({Key? key}) : super(key: key);
+  const DatoscarrosWidget({super.key});
 
   @override
   _DatoscarrosWidgetState createState() => _DatoscarrosWidgetState();
@@ -61,14 +58,14 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(5.0, 50.0, 5.0, 15.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 50.0, 5.0, 15.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'pzykhk7g' /* Datos de los carros  */,
@@ -86,13 +83,13 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 15.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 15.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(1.00, 0.00),
+                    alignment: const AlignmentDirectional(1.00, 0.00),
                     child: FFButtonWidget(
                       onPressed: () async {
                         context.pushNamed('AddVehicle');
@@ -103,10 +100,10 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
                       options: FFButtonOptions(
                         width: 200.0,
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).sinopia,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -114,7 +111,7 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
                                   color: Colors.white,
                                 ),
                         elevation: 3.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -126,12 +123,12 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 15.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 15.0),
               child: Container(
                 width: 220.0,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 3.0,
                       color: Color(0x33000000),
@@ -140,7 +137,7 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
                   ],
                   borderRadius: BorderRadius.circular(12.0),
                   border: Border.all(
-                    color: Color(0xFFE0E3E7),
+                    color: const Color(0xFFE0E3E7),
                   ),
                 ),
                 child: Column(
@@ -150,7 +147,7 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,7 +162,7 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -175,14 +172,14 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
                                   .bodyLarge
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF14181B),
+                                    color: const Color(0xFF14181B),
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: RichText(
                               textScaleFactor:
@@ -193,13 +190,13 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
                                     text: FFLocalizations.of(context).getText(
                                       'az3jlp9k' /* Total Workouts:  */,
                                     ),
-                                    style: TextStyle(),
+                                    style: const TextStyle(),
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
                                       '0bb8lh3y' /* 12 */,
                                     ),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Color(0xFF4B39EF),
                                     ),
                                   )
@@ -208,7 +205,7 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
                                     .labelSmall
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF57636C),
+                                      color: const Color(0xFF57636C),
                                       fontSize: 12.0,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -234,7 +231,7 @@ class _DatoscarrosWidgetState extends State<DatoscarrosWidget> {
             wrapWithModel(
               model: _model.navBarModel,
               updateCallback: () => setState(() {}),
-              child: NavBarWidget(),
+              child: const NavBarWidget(),
             ),
           ],
         ),

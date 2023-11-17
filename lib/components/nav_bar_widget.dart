@@ -1,16 +1,14 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'nav_bar_model.dart';
 export 'nav_bar_model.dart';
 
 class NavBarWidget extends StatefulWidget {
-  const NavBarWidget({Key? key}) : super(key: key);
+  const NavBarWidget({super.key});
 
   @override
   _NavBarWidgetState createState() => _NavBarWidgetState();
@@ -42,17 +40,17 @@ class _NavBarWidgetState extends State<NavBarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 110.0,
       child: Stack(
-        alignment: AlignmentDirectional(0.0, 1.0),
+        alignment: const AlignmentDirectional(0.0, 1.0),
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 39.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 39.0, 0.0, 0.0),
             child: Container(
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).eerieBlack3,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),
                   topLeft: Radius.circular(10.0),
@@ -60,9 +58,9 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                 ),
               ),
               child: Align(
-                alignment: AlignmentDirectional(0.00, 0.00),
+                alignment: const AlignmentDirectional(0.00, 0.00),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -96,12 +94,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.00, 1.00),
+                        alignment: const AlignmentDirectional(0.00, 1.00),
                         child: Container(
                           width: 50.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: FlutterFlowTheme.of(context).eerieBlack3,
                             borderRadius: BorderRadius.circular(0.0),
                           ),
                         ),
@@ -125,7 +122,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
           Container(
             width: 100.0,
             height: 100.0,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.rectangle,
             ),
             child: Row(
@@ -133,7 +130,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
                   child: FlutterFlowIconButton(
                     borderColor: FlutterFlowTheme.of(context).primaryBackground,
                     borderRadius: 400.0,
@@ -145,8 +142,12 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       color: FlutterFlowTheme.of(context).primaryText,
                       size: 24.0,
                     ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
+                    onPressed: () async {
+                      GoRouter.of(context).prepareAuthEvent();
+                      await authManager.signOut();
+                      GoRouter.of(context).clearRedirectLocation();
+
+                      context.goNamedAuth('Login', context.mounted);
                     },
                   ),
                 ),

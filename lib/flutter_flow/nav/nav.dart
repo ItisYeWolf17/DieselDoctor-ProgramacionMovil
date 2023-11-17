@@ -1,20 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -79,43 +73,58 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomeWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? const HomeWidget() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomeWidget() : LoginWidget(),
+              appStateNotifier.loggedIn ? const HomeWidget() : const LoginWidget(),
         ),
         FFRoute(
           name: 'Login',
           path: '/login',
-          builder: (context, params) => LoginWidget(),
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'SignUp',
           path: '/signUp',
-          builder: (context, params) => SignUpWidget(),
+          builder: (context, params) => const SignUpWidget(),
         ),
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => HomeWidget(),
+          builder: (context, params) => const HomeWidget(),
         ),
         FFRoute(
           name: 'Customers',
           path: '/customers',
-          builder: (context, params) => CustomersWidget(),
+          builder: (context, params) => const CustomersWidget(),
         ),
         FFRoute(
           name: 'Datoscarros',
           path: '/datoscarros',
-          builder: (context, params) => DatoscarrosWidget(),
+          builder: (context, params) => const DatoscarrosWidget(),
         ),
         FFRoute(
           name: 'AddVehicle',
           path: '/addVehicle',
-          builder: (context, params) => AddVehicleWidget(),
+          builder: (context, params) => const AddVehicleWidget(),
+        ),
+        FFRoute(
+          name: 'AddCustomer',
+          path: '/addCustomer',
+          builder: (context, params) => const AddCustomerWidget(),
+        ),
+        FFRoute(
+          name: 'UpdateCustomer',
+          path: '/updateCustomer',
+          asyncParams: {
+            'cliente': getDoc(['clientes'], ClientesRecord.fromSnapshot),
+          },
+          builder: (context, params) => UpdateCustomerWidget(
+            cliente: params.getParam('cliente', ParamType.Document),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -341,7 +350,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

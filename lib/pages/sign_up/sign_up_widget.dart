@@ -5,13 +5,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'sign_up_model.dart';
 export 'sign_up_model.dart';
 
 class SignUpWidget extends StatefulWidget {
-  const SignUpWidget({Key? key}) : super(key: key);
+  const SignUpWidget({super.key});
 
   @override
   _SignUpWidgetState createState() => _SignUpWidgetState();
@@ -86,14 +84,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 15.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.fullnameFieldController,
                           focusNode: _model.fullnameFieldFocusNode,
@@ -150,14 +148,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 15.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.emailFieldController,
                           focusNode: _model.emailFieldFocusNode,
@@ -214,14 +212,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 15.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: TextFormField(
                           controller: _model.passwordFIeldController,
                           focusNode: _model.passwordFIeldFocusNode,
@@ -278,20 +276,20 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 15.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(0.00, 0.00),
+                        alignment: const AlignmentDirectional(0.00, 0.00),
                         child: FFButtonWidget(
                           onPressed: () async {
                             GoRouter.of(context).prepareAuthEvent();
                             if (_model.passwordFIeldController.text !=
                                 _model.passwordFIeldController.text) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                   content: Text(
                                     'Passwords don\'t match!',
                                   ),
@@ -325,9 +323,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           ),
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 100.0, 0.0, 100.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).sinopia,
                             textStyle: FlutterFlowTheme.of(context)
@@ -337,7 +335,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   color: Colors.white,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -350,15 +348,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 15.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(0.00, -1.00),
+                        alignment: const AlignmentDirectional(0.00, -1.00),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 50.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
