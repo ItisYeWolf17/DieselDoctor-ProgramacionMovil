@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "81615932475",
+    "project_id": "dieseldoctorg2",
+    "storage_bucket": "dieseldoctorg2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81615932475:android:1930fb93f210946ea9e01e",
+        "android_client_info": {
+          "package_name": "com.SC703.DieselDoctorG2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe9d2pPixGH0sxBsU7X_1eiOmSNE9UHy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81615932475:android:059d2ea842275095a9e01e",
+        "android_client_info": {
+          "package_name": "com.SC703.G2_DieselDoctor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe9d2pPixGH0sxBsU7X_1eiOmSNE9UHy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81615932475:android:a92c5b965200018ea9e01e",
+        "android_client_info": {
+          "package_name": "com.mycompany.dieseldoctorg2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe9d2pPixGH0sxBsU7X_1eiOmSNE9UHy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
