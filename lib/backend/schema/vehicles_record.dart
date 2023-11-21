@@ -7,8 +7,8 @@ import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 
-class VehicleRecord extends FirestoreRecord {
-  VehicleRecord._(
+class VehiclesRecord extends FirestoreRecord {
+  VehiclesRecord._(
     super.reference,
     super.data,
   ) {
@@ -45,10 +45,12 @@ class VehicleRecord extends FirestoreRecord {
   String get imagen => _imagen ?? '';
   bool hasImagen() => _imagen != null;
 
-  // "cliente" field.
-  DocumentReference? _cliente;
-  DocumentReference? get cliente => _cliente;
-  bool hasCliente() => _cliente != null;
+  // "id_cuenta" field.
+  DocumentReference? _idCuenta;
+  DocumentReference? get idCuenta => _idCuenta;
+  bool hasIdCuenta() => _idCuenta != null;
+
+  DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _marca = snapshotData['marca'] as String?;
@@ -57,51 +59,56 @@ class VehicleRecord extends FirestoreRecord {
     _placa = snapshotData['placa'] as String?;
     _color = snapshotData['color'] as String?;
     _imagen = snapshotData['imagen'] as String?;
-    _cliente = snapshotData['cliente'] as DocumentReference?;
+    _idCuenta = snapshotData['id_cuenta'] as DocumentReference?;
   }
 
-  static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('vehicle');
+  static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
+      parent != null
+          ? parent.collection('Vehicles')
+          : FirebaseFirestore.instance.collectionGroup('Vehicles');
 
-  static Stream<VehicleRecord> getDocument(DocumentReference ref) =>
-      ref.snapshots().map((s) => VehicleRecord.fromSnapshot(s));
+  static DocumentReference createDoc(DocumentReference parent) =>
+      parent.collection('Vehicles').doc();
 
-  static Future<VehicleRecord> getDocumentOnce(DocumentReference ref) =>
-      ref.get().then((s) => VehicleRecord.fromSnapshot(s));
+  static Stream<VehiclesRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => VehiclesRecord.fromSnapshot(s));
 
-  static VehicleRecord fromSnapshot(DocumentSnapshot snapshot) =>
-      VehicleRecord._(
+  static Future<VehiclesRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => VehiclesRecord.fromSnapshot(s));
+
+  static VehiclesRecord fromSnapshot(DocumentSnapshot snapshot) =>
+      VehiclesRecord._(
         snapshot.reference,
         mapFromFirestore(snapshot.data() as Map<String, dynamic>),
       );
 
-  static VehicleRecord getDocumentFromData(
+  static VehiclesRecord getDocumentFromData(
     Map<String, dynamic> data,
     DocumentReference reference,
   ) =>
-      VehicleRecord._(reference, mapFromFirestore(data));
+      VehiclesRecord._(reference, mapFromFirestore(data));
 
   @override
   String toString() =>
-      'VehicleRecord(reference: ${reference.path}, data: $snapshotData)';
+      'VehiclesRecord(reference: ${reference.path}, data: $snapshotData)';
 
   @override
   int get hashCode => reference.path.hashCode;
 
   @override
   bool operator ==(other) =>
-      other is VehicleRecord &&
+      other is VehiclesRecord &&
       reference.path.hashCode == other.reference.path.hashCode;
 }
 
-Map<String, dynamic> createVehicleRecordData({
+Map<String, dynamic> createVehiclesRecordData({
   String? marca,
   String? modelo,
   String? year,
   String? placa,
   String? color,
   String? imagen,
-  DocumentReference? cliente,
+  DocumentReference? idCuenta,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -111,38 +118,38 @@ Map<String, dynamic> createVehicleRecordData({
       'placa': placa,
       'color': color,
       'imagen': imagen,
-      'cliente': cliente,
+      'id_cuenta': idCuenta,
     }.withoutNulls,
   );
 
   return firestoreData;
 }
 
-class VehicleRecordDocumentEquality implements Equality<VehicleRecord> {
-  const VehicleRecordDocumentEquality();
+class VehiclesRecordDocumentEquality implements Equality<VehiclesRecord> {
+  const VehiclesRecordDocumentEquality();
 
   @override
-  bool equals(VehicleRecord? e1, VehicleRecord? e2) {
+  bool equals(VehiclesRecord? e1, VehiclesRecord? e2) {
     return e1?.marca == e2?.marca &&
         e1?.modelo == e2?.modelo &&
         e1?.year == e2?.year &&
         e1?.placa == e2?.placa &&
         e1?.color == e2?.color &&
         e1?.imagen == e2?.imagen &&
-        e1?.cliente == e2?.cliente;
+        e1?.idCuenta == e2?.idCuenta;
   }
 
   @override
-  int hash(VehicleRecord? e) => const ListEquality().hash([
+  int hash(VehiclesRecord? e) => const ListEquality().hash([
         e?.marca,
         e?.modelo,
         e?.year,
         e?.placa,
         e?.color,
         e?.imagen,
-        e?.cliente
+        e?.idCuenta
       ]);
 
   @override
-  bool isValidKey(Object? o) => o is VehicleRecord;
+  bool isValidKey(Object? o) => o is VehiclesRecord;
 }

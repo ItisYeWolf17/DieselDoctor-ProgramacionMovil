@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,7 +10,12 @@ import 'add_vehicle_model.dart';
 export 'add_vehicle_model.dart';
 
 class AddVehicleWidget extends StatefulWidget {
-  const AddVehicleWidget({super.key});
+  const AddVehicleWidget({
+    super.key,
+    required this.cliente,
+  });
+
+  final DocumentReference? cliente;
 
   @override
   _AddVehicleWidgetState createState() => _AddVehicleWidgetState();
@@ -502,19 +508,17 @@ class _AddVehicleWidgetState extends State<AddVehicleWidget> {
                         alignment: const AlignmentDirectional(0.00, 0.00),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            await VehicleRecord.collection
-                                .doc()
-                                .set(createVehicleRecordData(
-                                  marca: _model.txtMarcaController.text,
-                                  modelo: _model.txtModeloController.text,
-                                  year: _model.txtyearController.text,
-                                  placa: _model.txtplacaController.text,
-                                  color: _model.txtcolorController.text,
-                                  imagen: _model.txturlimagenController.text,
-                                ));
-
-                            context.pushNamed('Vehicles');
-
+                            await VehiclesRecord.createDoc(widget.cliente!)
+                                .set(createVehiclesRecordData(
+                              marca: _model.txtMarcaController.text,
+                              modelo: _model.txtModeloController.text,
+                              year: _model.txtyearController.text,
+                              placa: _model.txtplacaController.text,
+                              color: _model.txtcolorController.text,
+                              imagen: _model.txturlimagenController.text,
+                              idCuenta: currentUserReference,
+                            ));
+                            context.safePop();
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {

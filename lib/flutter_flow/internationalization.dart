@@ -165,10 +165,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Inicio',
       'en': '',
     },
-    'ks48ycyg': {
-      'es': '39',
-      'en': '',
-    },
     '7t71xll0': {
       'es': '150',
       'en': '',
@@ -208,30 +204,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Ingrese el nombre del cliente a buscar',
       'en': '',
     },
-    '7ns9585y': {
-      'es': '0',
-      'en': '',
-    },
     'o21dhs50': {
-      'es': 'Home',
-      'en': '',
-    },
-  },
-  // Vehicles
-  {
-    'pzykhk7g': {
-      'es': 'Vehiculos',
-      'en': '',
-    },
-    '7b8tnz4f': {
-      'es': 'Añadir Vehiculo',
-      'en': '',
-    },
-    '0bb8lh3y': {
-      'es': ' - ',
-      'en': '',
-    },
-    '4d9uxvnn': {
       'es': 'Home',
       'en': '',
     },
@@ -403,6 +376,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'ce5c0za6': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // Vechicles
+  {
+    'jw52926x': {
+      'es': 'Vehiculos',
+      'en': '',
+    },
+    't3rdeo42': {
+      'es': 'Agregar Vehiculo',
+      'en': '',
+    },
+    '04bjqjl6': {
       'es': 'Home',
       'en': '',
     },

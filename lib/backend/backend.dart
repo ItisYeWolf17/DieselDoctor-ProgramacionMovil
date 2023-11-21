@@ -7,9 +7,9 @@ import 'schema/util/firestore_util.dart';
 
 import 'schema/users_record.dart';
 import 'schema/clientes_record.dart';
-import 'schema/vehicle_record.dart';
 import 'schema/mantenimiento_record.dart';
 import 'schema/citas_record.dart';
+import 'schema/vehicles_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -19,9 +19,9 @@ export 'schema/util/schema_util.dart';
 
 export 'schema/users_record.dart';
 export 'schema/clientes_record.dart';
-export 'schema/vehicle_record.dart';
 export 'schema/mantenimiento_record.dart';
 export 'schema/citas_record.dart';
+export 'schema/vehicles_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -97,43 +97,6 @@ Future<List<ClientesRecord>> queryClientesRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query VehicleRecords (as a Stream and as a Future).
-Future<int> queryVehicleRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      VehicleRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<VehicleRecord>> queryVehicleRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      VehicleRecord.collection,
-      VehicleRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<VehicleRecord>> queryVehicleRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      VehicleRecord.collection,
-      VehicleRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
 /// Functions to query MantenimientoRecords (as a Stream and as a Future).
 Future<int> queryMantenimientoRecordCount({
   Query Function(Query)? queryBuilder,
@@ -203,6 +166,46 @@ Future<List<CitasRecord>> queryCitasRecordOnce({
     queryCollectionOnce(
       CitasRecord.collection,
       CitasRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query VehiclesRecords (as a Stream and as a Future).
+Future<int> queryVehiclesRecordCount({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      VehiclesRecord.collection(parent),
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<VehiclesRecord>> queryVehiclesRecord({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      VehiclesRecord.collection(parent),
+      VehiclesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<VehiclesRecord>> queryVehiclesRecordOnce({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      VehiclesRecord.collection(parent),
+      VehiclesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

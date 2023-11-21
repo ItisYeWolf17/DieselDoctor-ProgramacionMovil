@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/components/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -111,18 +113,44 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       .primaryBackground,
                                   size: 35.0,
                                 ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'ks48ycyg' /* 39 */,
+                                FutureBuilder<int>(
+                                  future: queryClientesRecordCount(
+                                    queryBuilder: (clientesRecord) =>
+                                        clientesRecord.where(
+                                      'id_cuenta',
+                                      isEqualTo: currentUserReference,
+                                    ),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        fontSize: 35.0,
-                                      ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    int textCount = snapshot.data!;
+                                    return Text(
+                                      textCount.toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontSize: 35.0,
+                                          ),
+                                    );
+                                  },
                                 ),
                               ],
                             ),
@@ -143,18 +171,46 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   color: FlutterFlowTheme.of(context).white,
                                   size: 35.0,
                                 ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '7t71xll0' /* 150 */,
+                                FutureBuilder<int>(
+                                  future: queryVehiclesRecordCount(
+                                    queryBuilder: (vehiclesRecord) =>
+                                        vehiclesRecord.where(
+                                      'id_cuenta',
+                                      isEqualTo: currentUserReference,
+                                    ),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        fontSize: 35.0,
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    int textCount = snapshot.data!;
+                                    return Text(
+                                      FFLocalizations.of(context).getText(
+                                        '7t71xll0' /* 150 */,
                                       ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontSize: 35.0,
+                                          ),
+                                    );
+                                  },
                                 ),
                               ],
                             ),

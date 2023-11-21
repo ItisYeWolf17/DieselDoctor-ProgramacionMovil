@@ -102,14 +102,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CustomersWidget(),
         ),
         FFRoute(
-          name: 'Vehicles',
-          path: '/vehicles',
-          builder: (context, params) => VehiclesWidget(
-            cliente: params.getParam(
-                'cliente', ParamType.DocumentReference, false, ['clientes']),
-          ),
-        ),
-        FFRoute(
           name: 'AddCustomer',
           path: '/addCustomer',
           builder: (context, params) => const AddCustomerWidget(),
@@ -127,7 +119,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AddVehicle',
           path: '/addVehicle',
-          builder: (context, params) => const AddVehicleWidget(),
+          builder: (context, params) => AddVehicleWidget(
+            cliente: params.getParam(
+                'cliente', ParamType.DocumentReference, false, ['clientes']),
+          ),
         ),
         FFRoute(
           name: 'AddAppoiment',
@@ -138,6 +133,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AddMaintenance',
           path: '/addMaintenance',
           builder: (context, params) => const AddMaintenanceWidget(),
+        ),
+        FFRoute(
+          name: 'Vechicles',
+          path: '/vechicles',
+          builder: (context, params) => VechiclesWidget(
+            cliente: params.getParam(
+                'cliente', ParamType.DocumentReference, false, ['clientes']),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -1,9 +1,9 @@
 import '/components/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'vehicles_widget.dart' show VehiclesWidget;
+import 'vechicles_widget.dart' show VechiclesWidget;
 import 'package:flutter/material.dart';
 
-class VehiclesModel extends FlutterFlowModel<VehiclesWidget> {
+class VechiclesModel extends FlutterFlowModel<VechiclesWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
