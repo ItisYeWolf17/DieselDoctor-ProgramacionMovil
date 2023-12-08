@@ -111,9 +111,7 @@ class _AddAppoimentWidgetState extends State<AddAppoimentWidget> {
                                     context: context,
                                     initialDate: getCurrentTimestamp,
                                     firstDate:
-                                        (DateTime.fromMicrosecondsSinceEpoch(
-                                                1700114400000000) ??
-                                            DateTime(1900)),
+                                        (getCurrentTimestamp ?? DateTime(1900)),
                                     lastDate: DateTime(2050),
                                     builder: (context, child) {
                                       return wrapInMaterialDatePickerTheme(

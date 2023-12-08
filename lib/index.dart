@@ -11,3 +11,8 @@ export '/pages/add_appoiment/add_appoiment_widget.dart' show AddAppoimentWidget;
 export '/pages/add_maintenance/add_maintenance_widget.dart'
     show AddMaintenanceWidget;
 export '/pages/vechicles/vechicles_widget.dart' show VechiclesWidget;
+export '/pages/editar_vehiculos/editar_vehiculos_widget.dart'
+    show EditarVehiculosWidget;
+export '/pages/update_maintenance/update_maintenance_widget.dart'
+    show UpdateMaintenanceWidget;
+export '/pages/maintenances/maintenances_widget.dart' show MaintenancesWidget;

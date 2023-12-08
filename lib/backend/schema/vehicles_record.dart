@@ -50,6 +50,11 @@ class VehiclesRecord extends FirestoreRecord {
   DocumentReference? get idCuenta => _idCuenta;
   bool hasIdCuenta() => _idCuenta != null;
 
+  // "mantenimientos" field.
+  List<DocumentReference>? _mantenimientos;
+  List<DocumentReference> get mantenimientos => _mantenimientos ?? const [];
+  bool hasMantenimientos() => _mantenimientos != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -60,6 +65,7 @@ class VehiclesRecord extends FirestoreRecord {
     _color = snapshotData['color'] as String?;
     _imagen = snapshotData['imagen'] as String?;
     _idCuenta = snapshotData['id_cuenta'] as DocumentReference?;
+    _mantenimientos = getDataList(snapshotData['mantenimientos']);
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -130,13 +136,15 @@ class VehiclesRecordDocumentEquality implements Equality<VehiclesRecord> {
 
   @override
   bool equals(VehiclesRecord? e1, VehiclesRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.marca == e2?.marca &&
         e1?.modelo == e2?.modelo &&
         e1?.year == e2?.year &&
         e1?.placa == e2?.placa &&
         e1?.color == e2?.color &&
         e1?.imagen == e2?.imagen &&
-        e1?.idCuenta == e2?.idCuenta;
+        e1?.idCuenta == e2?.idCuenta &&
+        listEquality.equals(e1?.mantenimientos, e2?.mantenimientos);
   }
 
   @override
@@ -147,7 +155,8 @@ class VehiclesRecordDocumentEquality implements Equality<VehiclesRecord> {
         e?.placa,
         e?.color,
         e?.imagen,
-        e?.idCuenta
+        e?.idCuenta,
+        e?.mantenimientos
       ]);
 
   @override

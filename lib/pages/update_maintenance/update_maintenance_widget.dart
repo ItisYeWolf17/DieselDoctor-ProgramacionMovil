@@ -5,38 +5,42 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'add_maintenance_model.dart';
-export 'add_maintenance_model.dart';
+import 'update_maintenance_model.dart';
+export 'update_maintenance_model.dart';
 
-class AddMaintenanceWidget extends StatefulWidget {
-  const AddMaintenanceWidget({
+class UpdateMaintenanceWidget extends StatefulWidget {
+  const UpdateMaintenanceWidget({
     super.key,
-    required this.vehicleRef,
+    required this.mantenimiento,
   });
 
-  final DocumentReference? vehicleRef;
+  final MantenimientoRecord? mantenimiento;
 
   @override
-  _AddMaintenanceWidgetState createState() => _AddMaintenanceWidgetState();
+  _UpdateMaintenanceWidgetState createState() =>
+      _UpdateMaintenanceWidgetState();
 }
 
-class _AddMaintenanceWidgetState extends State<AddMaintenanceWidget> {
-  late AddMaintenanceModel _model;
+class _UpdateMaintenanceWidgetState extends State<UpdateMaintenanceWidget> {
+  late UpdateMaintenanceModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AddMaintenanceModel());
+    _model = createModel(context, () => UpdateMaintenanceModel());
 
-    _model.txtDetalleController ??= TextEditingController();
+    _model.txtDetalleController ??=
+        TextEditingController(text: widget.mantenimiento?.nombre);
     _model.txtDetalleFocusNode ??= FocusNode();
 
-    _model.txtDescripcionController ??= TextEditingController();
+    _model.txtDescripcionController ??=
+        TextEditingController(text: widget.mantenimiento?.descripcion);
     _model.txtDescripcionFocusNode ??= FocusNode();
 
-    _model.txtCostoController ??= TextEditingController();
+    _model.txtCostoController ??=
+        TextEditingController(text: widget.mantenimiento?.costo.toString());
     _model.txtCostoFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -89,7 +93,7 @@ class _AddMaintenanceWidgetState extends State<AddMaintenanceWidget> {
                         children: [
                           Text(
                             FFLocalizations.of(context).getText(
-                              'dpr6g8f3' /* Agregar Mantenimiento */,
+                              'tmsved4q' /* Agregar Mantenimiento */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -119,7 +123,7 @@ class _AddMaintenanceWidgetState extends State<AddMaintenanceWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  'erfm3kwo' /* Ingrese el detalle */,
+                                  'kfvh5cq2' /* Ingrese el detalle */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -184,7 +188,7 @@ class _AddMaintenanceWidgetState extends State<AddMaintenanceWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  '3cmtyhg5' /* Ingrese la descripcion */,
+                                  'nupsq5l5' /* Ingrese la descripcion */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -250,7 +254,7 @@ class _AddMaintenanceWidgetState extends State<AddMaintenanceWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintText: FFLocalizations.of(context).getText(
-                                  'jw7yik4z' /* Ingrese el costo */,
+                                  'ph0xbxs0' /* Ingrese el costo */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
@@ -304,15 +308,13 @@ class _AddMaintenanceWidgetState extends State<AddMaintenanceWidget> {
                         alignment: const AlignmentDirectional(0.00, 0.00),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            await MantenimientoRecord.collection
-                                .doc()
-                                .set(createMantenimientoRecordData(
-                                  nombre: _model.txtDetalleController.text,
-                                  descripcion:
-                                      _model.txtDescripcionController.text,
-                                  costo: double.tryParse(
-                                      _model.txtCostoController.text),
-                                ));
+                            await widget.mantenimiento!.reference
+                                .update(createMantenimientoRecordData(
+                              nombre: _model.txtDetalleController.text,
+                              descripcion: _model.txtDescripcionController.text,
+                              costo: double.tryParse(
+                                  _model.txtCostoController.text),
+                            ));
                             context.safePop();
                             await showDialog(
                               context: context,
@@ -320,7 +322,7 @@ class _AddMaintenanceWidgetState extends State<AddMaintenanceWidget> {
                                 return AlertDialog(
                                   title: const Text('Mantenimiento'),
                                   content: const Text(
-                                      'Se ha creado el mantenimiento de forma correcta!'),
+                                      'Se ha actualizado el mantenimiento de forma correcta!'),
                                   actions: [
                                     TextButton(
                                       onPressed: () =>
@@ -333,7 +335,7 @@ class _AddMaintenanceWidgetState extends State<AddMaintenanceWidget> {
                             );
                           },
                           text: FFLocalizations.of(context).getText(
-                            'yxv2ic6w' /* Agregar Mantenimiento */,
+                            '6z407xpd' /* Actualizar Mantenimiento */,
                           ),
                           options: FFButtonOptions(
                             width: 300.0,

@@ -198,9 +198,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     }
                                     int textCount = snapshot.data!;
                                     return Text(
-                                      FFLocalizations.of(context).getText(
-                                        '7t71xll0' /* 150 */,
-                                      ),
+                                      textCount.toString(),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

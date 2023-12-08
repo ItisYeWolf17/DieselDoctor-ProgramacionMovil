@@ -30,10 +30,16 @@ class MantenimientoRecord extends FirestoreRecord {
   double get costo => _costo ?? 0.0;
   bool hasCosto() => _costo != null;
 
+  // "Vehicle" field.
+  DocumentReference? _vehicle;
+  DocumentReference? get vehicle => _vehicle;
+  bool hasVehicle() => _vehicle != null;
+
   void _initializeFields() {
     _nombre = snapshotData['Nombre'] as String?;
     _descripcion = snapshotData['Descripcion'] as String?;
     _costo = castToType<double>(snapshotData['Costo']);
+    _vehicle = snapshotData['Vehicle'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -74,12 +80,14 @@ Map<String, dynamic> createMantenimientoRecordData({
   String? nombre,
   String? descripcion,
   double? costo,
+  DocumentReference? vehicle,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'Nombre': nombre,
       'Descripcion': descripcion,
       'Costo': costo,
+      'Vehicle': vehicle,
     }.withoutNulls,
   );
 
@@ -94,12 +102,13 @@ class MantenimientoRecordDocumentEquality
   bool equals(MantenimientoRecord? e1, MantenimientoRecord? e2) {
     return e1?.nombre == e2?.nombre &&
         e1?.descripcion == e2?.descripcion &&
-        e1?.costo == e2?.costo;
+        e1?.costo == e2?.costo &&
+        e1?.vehicle == e2?.vehicle;
   }
 
   @override
-  int hash(MantenimientoRecord? e) =>
-      const ListEquality().hash([e?.nombre, e?.descripcion, e?.costo]);
+  int hash(MantenimientoRecord? e) => const ListEquality()
+      .hash([e?.nombre, e?.descripcion, e?.costo, e?.vehicle]);
 
   @override
   bool isValidKey(Object? o) => o is MantenimientoRecord;

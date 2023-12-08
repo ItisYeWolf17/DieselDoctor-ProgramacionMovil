@@ -165,10 +165,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Inicio',
       'en': '',
     },
-    '7t71xll0': {
-      'es': '150',
-      'en': '',
-    },
     'k5f601yq': {
       'es': '2000',
       'en': '',
@@ -391,6 +387,79 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '04bjqjl6': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // EditarVehiculos
+  {
+    'avzysupq': {
+      'es': 'Editar Vehiculo',
+      'en': '',
+    },
+    '0g6h7146': {
+      'es': 'Label here...',
+      'en': '',
+    },
+    'yisfj0fr': {
+      'es': 'Label here...',
+      'en': '',
+    },
+    'vg2a8fdi': {
+      'es': 'Label here...',
+      'en': '',
+    },
+    '59sm9qy3': {
+      'es': 'Label here...',
+      'en': '',
+    },
+    'wgt4utd8': {
+      'es': 'Agregar  Vehiculo',
+      'en': '',
+    },
+    'iluxcgbf': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // UpdateMaintenance
+  {
+    'tmsved4q': {
+      'es': 'Agregar Mantenimiento',
+      'en': '',
+    },
+    'kfvh5cq2': {
+      'es': 'Ingrese el detalle',
+      'en': '',
+    },
+    'nupsq5l5': {
+      'es': 'Ingrese la descripcion',
+      'en': '',
+    },
+    'ph0xbxs0': {
+      'es': 'Ingrese el costo',
+      'en': '',
+    },
+    '6z407xpd': {
+      'es': 'Actualizar Mantenimiento',
+      'en': '',
+    },
+    'yp5pnhth': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // Maintenances
+  {
+    '434h1x1t': {
+      'es': 'Mantenimientos',
+      'en': '',
+    },
+    'yvagiaik': {
+      'es': 'Agregar Mantenimiento',
+      'en': '',
+    },
+    'cnjf2ncz': {
       'es': 'Home',
       'en': '',
     },

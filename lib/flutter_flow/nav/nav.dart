@@ -132,7 +132,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AddMaintenance',
           path: '/addMaintenance',
-          builder: (context, params) => const AddMaintenanceWidget(),
+          builder: (context, params) => AddMaintenanceWidget(
+            vehicleRef: params.getParam('vehicleRef',
+                ParamType.DocumentReference, false, ['clientes', 'Vehicles']),
+          ),
         ),
         FFRoute(
           name: 'Vechicles',
@@ -140,6 +143,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => VechiclesWidget(
             cliente: params.getParam(
                 'cliente', ParamType.DocumentReference, false, ['clientes']),
+          ),
+        ),
+        FFRoute(
+          name: 'EditarVehiculos',
+          path: '/editarVehiculos',
+          builder: (context, params) => EditarVehiculosWidget(
+            cliente: params.getParam(
+                'cliente', ParamType.DocumentReference, false, ['clientes']),
+          ),
+        ),
+        FFRoute(
+          name: 'UpdateMaintenance',
+          path: '/updateMaintenance',
+          asyncParams: {
+            'mantenimiento':
+                getDoc(['Mantenimiento'], MantenimientoRecord.fromSnapshot),
+          },
+          builder: (context, params) => UpdateMaintenanceWidget(
+            mantenimiento: params.getParam('mantenimiento', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'Maintenances',
+          path: '/maintenances',
+          asyncParams: {
+            'vehiculo':
+                getDoc(['clientes', 'Vehicles'], VehiclesRecord.fromSnapshot),
+          },
+          builder: (context, params) => MaintenancesWidget(
+            vehiculo: params.getParam('vehiculo', ParamType.Document),
           ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
